@@ -21,6 +21,8 @@
       :always-scroll-to-bottom="alwaysScrollToBottom"
       :show-edition="showEdition"
       :show-deletion="showDeletion"
+      :show-received-edition="showReceivedEdition"
+      :show-received-deletion="showReceivedDeletion"
       :show-confirmation-deletion="showConfirmationDeletion"
       :confirmation-deletion-message="confirmationDeletionMessage"
       :message-styling="messageStyling"
@@ -135,6 +137,14 @@ export default {
     showDeletion: {
       type: Boolean,
       required: true
+    },
+    showReceivedEdition: {
+      type: Boolean,
+      required: false
+    },
+    showReceivedDeletion: {
+      type: Boolean,
+      required: false
     },
     showConfirmationDeletion: {
       type: Boolean,

@@ -2,14 +2,15 @@
   <div class="sc-message--text" :style="messageColors">
     <template>
       <div class="sc-message--toolbox" :style="{background: messageColors.backgroundColor}">
-        <button v-if="showEdition && me && message.id" :disabled="isEditing" @click="edit">
+        <button
+          v-if="(showEdition || showReceivedEdition) && (me || showReceivedEdition) && message.id" :disabled="isEditing" @click="edit">
           <IconBase :color="isEditing ? 'black' : messageColors.color" width="10" icon-name="edit">
             <IconEdit />
           </IconBase>
         </button>
-        <div v-if="showDeletion">
+        <div v-if="showDeletion || showReceivedEdition">
           <button
-            v-if="me && message.id != null && message.id != undefined"
+            v-if="(me || showReceivedEdition) && message.id != null && message.id != undefined"
             @click="
               ifelse(
                 showConfirmationDeletion,
@@ -77,6 +78,14 @@ export default {
     showDeletion: {
       type: Boolean,
       required: true
+    },
+    showReceivedEdition: {
+      type: Boolean,
+      required: false
+    },
+    showReceivedDeletion: {
+      type: Boolean,
+      required: false
     },
     showConfirmationDeletion: {
       type: Boolean,

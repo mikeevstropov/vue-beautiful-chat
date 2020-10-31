@@ -23,6 +23,8 @@
       :show-file="showFile"
       :show-edition="showEdition"
       :show-deletion="showDeletion"
+      :show-received-edition="showReceivedEdition"
+      :show-received-deletion="showReceivedDeletion"
       :show-confirmation-deletion="showConfirmationDeletion"
       :confirmation-deletion-message="confirmationDeletionMessage"
       :show-header="showHeader"
@@ -102,6 +104,14 @@ export default {
     showDeletion: {
       type: Boolean,
       default: false
+    },
+    showReceivedEdition: {
+      type: Boolean,
+      required: false
+    },
+    showReceivedDeletion: {
+      type: Boolean,
+      required: false
     },
     showConfirmationDeletion: {
       type: Boolean,
