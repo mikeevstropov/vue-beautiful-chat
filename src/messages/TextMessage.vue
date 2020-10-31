@@ -35,8 +35,8 @@
       <p v-if="message.isEdited" class="sc-message--edited">
         <IconBase width="10" icon-name="edited">
           <IconEdit />
-        </IconBase>
-        edited
+        </IconBase>y
+        editedy
       </p>
     </slot>
   </div>
